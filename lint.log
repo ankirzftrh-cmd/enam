@@ -1,0 +1,93 @@
+
+> emasantam@0.1.0 lint
+> eslint
+
+
+C:\laragon\www\emasantam\prisma\seed.js
+  1:1   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:26  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\laragon\www\emasantam\prisma\seed.ts
+  63:13  error  'parent' is never reassigned. Use 'const' instead  prefer-const
+
+C:\laragon\www\emasantam\src\app\(user)\[category]\page.tsx
+   6:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  30:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  44:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\laragon\www\emasantam\src\app\(user)\cart\page.tsx
+  4:8  warning  'Image' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\app\(user)\harga-emas\page.tsx
+  137:50  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+C:\laragon\www\emasantam\src\app\(user)\page.tsx
+   6:10  warning  'ArrowRight' is defined but never used    @typescript-eslint/no-unused-vars
+   6:22  warning  'TrendingUp' is defined but never used    @typescript-eslint/no-unused-vars
+  30:37  warning  'idx' is defined but never used           @typescript-eslint/no-unused-vars
+  46:45  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\laragon\www\emasantam\src\app\admin\users\page.tsx
+  3:10  warning  'Users' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\app\api\auth\login\route.ts
+  44:14  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\app\api\products\[id]\route.ts
+  18:14  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  36:14  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\app\api\products\route.ts
+  19:14  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\app\login\page.tsx
+   4:8   warning  'Image' is defined but never used  @typescript-eslint/no-unused-vars
+  37:18  warning  'err' is defined but never used    @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\app\lokasi-butik\page.tsx
+  1:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\components\AdminDashboard.tsx
+   17:66  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   75:18  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  113:18  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  271:55  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  282:55  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\components\CategoryNavigator.tsx
+  4:8  warning  'Image' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\components\Footer.tsx
+  2:10  warning  'Facebook' is defined but never used   @typescript-eslint/no-unused-vars
+  2:20  warning  'Instagram' is defined but never used  @typescript-eslint/no-unused-vars
+  2:31  warning  'Twitter' is defined but never used    @typescript-eslint/no-unused-vars
+  2:40  warning  'MapPin' is defined but never used     @typescript-eslint/no-unused-vars
+  2:48  warning  'Phone' is defined but never used      @typescript-eslint/no-unused-vars
+  2:55  warning  'Mail' is defined but never used       @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\components\HeroSlider.tsx
+  4:8  warning  'Image' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\components\Navbar.tsx
+  5:41  warning  'Bell' is defined but never used   @typescript-eslint/no-unused-vars
+  5:55  warning  'User' is defined but never used   @typescript-eslint/no-unused-vars
+  6:8   warning  'Image' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\components\ProductListClient.tsx
+   6:10  warning  'clsx' is defined but never used        @typescript-eslint/no-unused-vars
+  27:31  warning  '_' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\components\ServicesAndSocials.tsx
+  1:8   warning  'Image' is defined but never used    @typescript-eslint/no-unused-vars
+  2:10  warning  'Youtube' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\lib\auth.ts
+   7:42  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:14  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+
+C:\laragon\www\emasantam\src\middleware.ts
+  28:9  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+✖ 43 problems (11 errors, 32 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+

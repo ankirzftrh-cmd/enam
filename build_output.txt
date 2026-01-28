@@ -1,0 +1,28 @@
+
+> emasantam@0.1.0 build
+> next build
+
+Gû¦ Next.js 16.1.4 (Turbopack)
+- Environments: .env
+
+GÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+G£ô Compiled successfully in 2.6s
+  Running TypeScript ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/28) ...
+  Generating static pages using 15 workers (7/28) 
+G¿» useSearchParams() should be wrapped in a suspense boundary at page "/login". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at Q (C:\laragon\www\emasantam\.next\server\chunks\ssr\node_modules_next_920e7746._.js:2:2111)
+    at o (C:\laragon\www\emasantam\.next\server\chunks\ssr\node_modules_next_920e7746._.js:4:5284)
+    at j (C:\laragon\www\emasantam\.next\server\chunks\ssr\[root-of-the-server]__4f6871ab._.js:1:5444)
+    at an (C:\laragon\www\emasantam\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84360)
+    at ai (C:\laragon\www\emasantam\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86179)
+    at al (C:\laragon\www\emasantam\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:107953)
+    at as (C:\laragon\www\emasantam\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:105368)
+    at aa (C:\laragon\www\emasantam\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84712)
+    at ai (C:\laragon\www\emasantam\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86228)
+    at ai (C:\laragon\www\emasantam\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:104708)
+Error occurred prerendering page "/login". Read more: https://nextjs.org/docs/messages/prerender-error
+Export encountered an error on /(auth)/login/page: /login, exiting the build.
+G¿» Next.js build worker exited with code: 1 and signal: null

@@ -1,0 +1,32 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Logam Mulia 10g",
+            "description": "Emas murni 99.99% bersertifikat Antam LBMA. Cocok untuk investasi jangka panjang.",
+            "price": 13500000,
+            "image": "",
+            "category": "Gold Bar",
+            "stockStatus": "READY"
+        },
+        {
+            "id": 2,
+            "name": "Logam Mulia 5g",
+            "description": "Pilihan tepat untuk menabung emas. Sertifikat terjamin.",
+            "price": 6800000,
+            "image": "",
+            "category": "Gold Bar",
+            "stockStatus": "NOT_READY"
+        },
+        {
+            "id": 3,
+            "name": "Logam Mulia 100g",
+            "description": "Investasi bernilai tinggi dengan spread rendah.",
+            "price": 135000000,
+            "image": "",
+            "category": "Gold Bar",
+            "stockStatus": "READY"
+        }
+    ],
+    "users": []
+}

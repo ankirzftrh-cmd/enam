@@ -1,0 +1,127 @@
+﻿
+> emasantam@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.4 (Turbopack)
+- Environments: .env
+
+node.exe : ΓÜá The 
+"middleware" file 
+convention is 
+deprecated. Please 
+use "proxy" instead. 
+Learn more: https://n
+extjs.org/docs/messag
+es/middleware-to-prox
+y
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : 
+NotSpecified: (Γ    
+Üá The 
+"middle...lewa    
+re-to-proxy:String) 
+[    ], 
+RemoteException
+    + 
+FullyQualifiedError  
+  Id : 
+NativeCommandErr    
+or
+ 
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 4.5s
+  Running TypeScript ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/28) ...
+  Generating static pages using 15 workers (7/28) 
+Γ¿» 
+useSearchParams() 
+should be wrapped in 
+a suspense boundary 
+at page "/login". 
+Read more: https://ne
+xtjs.org/docs/message
+s/missing-suspense-wi
+th-csr-bailout
+    at Q (C:\laragon\
+www\emasantam\.next\s
+erver\chunks\ssr\node
+_modules_next_920e774
+6._.js:2:2111)
+    at o (C:\laragon\
+www\emasantam\.next\s
+erver\chunks\ssr\node
+_modules_next_920e774
+6._.js:4:5284)
+    at j (C:\laragon\
+www\emasantam\.next\s
+erver\chunks\ssr\[roo
+t-of-the-server]__4f6
+871ab._.js:1:5444)
+    at an (C:\laragon
+\www\emasantam\node_m
+odules\next\dist\comp
+iled\next-server\app-
+page-turbo.runtime.pr
+od.js:2:84360)
+    at ai (C:\laragon
+\www\emasantam\node_m
+odules\next\dist\comp
+iled\next-server\app-
+page-turbo.runtime.pr
+od.js:2:86179)
+    at al (C:\laragon
+\www\emasantam\node_m
+odules\next\dist\comp
+iled\next-server\app-
+page-turbo.runtime.pr
+od.js:2:107953)
+    at as (C:\laragon
+\www\emasantam\node_m
+odules\next\dist\comp
+iled\next-server\app-
+page-turbo.runtime.pr
+od.js:2:105368)
+    at aa (C:\laragon
+\www\emasantam\node_m
+odules\next\dist\comp
+iled\next-server\app-
+page-turbo.runtime.pr
+od.js:2:84712)
+    at ai (C:\laragon
+\www\emasantam\node_m
+odules\next\dist\comp
+iled\next-server\app-
+page-turbo.runtime.pr
+od.js:2:86228)
+    at ai (C:\laragon
+\www\emasantam\node_m
+odules\next\dist\comp
+iled\next-server\app-
+page-turbo.runtime.pr
+od.js:2:104708)
+Error occurred 
+prerendering page 
+"/login". Read more: 
+https://nextjs.org/do
+cs/messages/prerender
+-error
+Export encountered 
+an error on 
+/(auth)/login/page: 
+/login, exiting the 
+build.
+Γ¿» Next.js build 
+worker exited with 
+code: 1 and signal: 
+null

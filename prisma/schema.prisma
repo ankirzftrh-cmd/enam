@@ -1,0 +1,142 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model cart {
+  id        Int        @id @default(autoincrement())
+  userId    Int        @unique(map: "Cart_userId_key")
+  updatedAt DateTime @updatedAt
+  user      user       @relation(fields: [userId], references: [id], map: "Cart_userId_fkey")
+  cartitem  cartitem[]
+}
+
+model cartitem {
+  id        Int     @id @default(autoincrement())
+  cartId    Int
+  productId Int
+  quantity  Int     @default(1)
+  cart      cart    @relation(fields: [cartId], references: [id], map: "CartItem_cartId_fkey")
+  product   product @relation(fields: [productId], references: [id], map: "CartItem_productId_fkey")
+
+  @@index([cartId], map: "CartItem_cartId_fkey")
+  @@index([productId], map: "CartItem_productId_fkey")
+}
+
+model category {
+  id             Int        @id @default(autoincrement())
+  name           String
+  slug           String     @unique(map: "Category_slug_key")
+  parentId       Int?
+  category       category?  @relation("categoryTocategory", fields: [parentId], references: [id], map: "Category_parentId_fkey")
+  other_category category[] @relation("categoryTocategory")
+  products       product[]
+
+  @@index([parentId], map: "Category_parentId_fkey")
+}
+
+model order {
+  id              Int          @id @default(autoincrement())
+  orderId         String       @unique(map: "Order_orderId_key")
+  userId          Int?
+  totalAmount     Float
+  status          String       @default("PENDING")
+  paymentUrl      String?
+  customerName    String?
+  customerEmail   String?
+  customerPhone   String?
+  shippingAddress String?      @db.Text
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  billingAddress  String?      @db.Text
+  ktpImage        String?
+  paymentDetails  Json?
+  user            user?        @relation(fields: [userId], references: [id], map: "Order_userId_fkey")
+  orderItems      orderitem[]
+  paymentLogs     paymentlog[]
+
+  @@index([userId], map: "Order_userId_fkey")
+}
+
+model orderitem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  productId Int
+  quantity  Int
+  price     Int     // Changed to Int for Flash Mobile compatibility
+  order     order   @relation(fields: [orderId], references: [id], map: "OrderItem_orderId_fkey")
+  product   product @relation(fields: [productId], references: [id], map: "OrderItem_productId_fkey")
+
+  @@index([orderId], map: "OrderItem_orderId_fkey")
+  @@index([productId], map: "OrderItem_productId_fkey")
+}
+
+model paymentlog {
+  id          Int      @id @default(autoincrement())
+  orderId     Int?
+  status      String?
+  rawResponse String?  @db.Text
+  createdAt   DateTime @default(now())
+  order       order?   @relation(fields: [orderId], references: [id], map: "PaymentLog_orderId_fkey")
+
+  @@index([orderId], map: "PaymentLog_orderId_fkey")
+}
+
+model product {
+  id           Int         @id @default(autoincrement())
+  name         String
+  description  String      @db.Text
+  price        Int         // Changed to Int for Flash Mobile compatibility
+  weight       Float       @default(0)
+  stock        Int         @default(10)
+  image        String?
+  images       Json?       // Stores String[] of image URLs
+  slug         String      @unique(map: "Product_slug_key")
+  purity       String?
+  thickness    String?
+  dimensions   String?
+  stockStatus  String      @default("READY")
+  isNew        Boolean     @default(false)
+  isBestSeller Boolean     @default(false)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  categoryId   Int
+  cartitem     cartitem[]
+  orderitem    orderitem[]
+  category     category    @relation(fields: [categoryId], references: [id], map: "Product_categoryId_fkey")
+  reviews      Review[]
+
+  @@index([categoryId], map: "Product_categoryId_fkey")
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  productId Int
+  product   product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userName  String
+  rating    Int
+  comment   String   @db.Text
+  date      DateTime @default(now())
+
+  @@index([productId])
+}
+
+model user {
+  id       Int      @id @default(autoincrement())
+  name     String
+  email    String   @unique(map: "User_email_key")
+  password String?
+  role     String   @default("USER")
+  phoneNumber String  @default("") // Temporary default to avoid migration issues with existing data, can be removed later or handled
+  nik        String   @default("")
+  npwp       String?
+  birthPlace String   @default("")
+  birthDate  DateTime @default(now()) // Placeholder default
+  joinedAt DateTime @default(now())
+  cart     cart?
+  order    order[]
+}
