@@ -180,22 +180,8 @@ export const FlashMobile = {
         } catch (error: any) {
             console.error("[FlashMobile] CRITICAL ERROR:", error.message);
 
-            // --- MOCK FALLBACK (for blocked IP or connection issues) ---
-            const mockPrefix = MOCK_VA_PREFIXES[params.bankCode] || "8808";
-            const mockVA = `${mockPrefix}${Math.floor(10000000 + Math.random() * 90000000)}`;
-
-            console.warn(`[FlashMobile] Generated MOCK VA (${params.bankCode}): ${mockVA}`);
-
-            return {
-                bankCode: params.bankCode,
-                accountNumber: mockVA,
-                expiryDate: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
-                amount: params.amount,
-                status: "MOCK_PENDING",
-                externalId: params.orderId,
-                provider: "FLASH_MOBILE_MOCK",
-                _mockReason: error.message
-            };
+            // Throw the actual error instead of returning mock data
+            throw new Error(`Flash Mobile API Error: ${error.message}`);
         }
     },
 
