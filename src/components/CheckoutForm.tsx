@@ -237,13 +237,13 @@ export default function CheckoutForm({ onSubmit, isSubmitting, items, total, onB
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Specific Validation for KTP
-        if (!ktpUrl && !isUploading) {
-            alert("Wajib upload Foto KTP dan tunggu hingga selesai.");
-            const ktpSection = document.getElementById("ktp-upload-section");
-            ktpSection?.scrollIntoView({ behavior: 'smooth' });
-            return;
-        }
+        // Specific Validation for KTP - Made OPTIONAL for now
+        // if (!ktpUrl && !isUploading) {
+        //     alert("Wajib upload Foto KTP dan tunggu hingga selesai.");
+        //     const ktpSection = document.getElementById("ktp-upload-section");
+        //     ktpSection?.scrollIntoView({ behavior: 'smooth' });
+        //     return;
+        // }
 
         if (isUploading) {
             alert("Sedang mengupload KTP, harap tunggu...");
@@ -337,7 +337,7 @@ export default function CheckoutForm({ onSubmit, isSubmitting, items, total, onB
 
                     {/* KTP Upload Section - Moved here as part of user details */}
                     <div id="ktp-upload-section" className="mb-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
-                        <label className="block text-sm font-bold text-[#1e3a8a] mb-2">Upload Foto KTP (Wajib)</label>
+                        <label className="block text-sm font-bold text-[#1e3a8a] mb-2">Upload Foto KTP (Opsional)</label>
                         <div className="border-2 border-dashed border-blue-300 rounded-lg p-6 text-center hover:bg-white transition cursor-pointer relative bg-white">
                             <input type="file" accept="image/*" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onChange={handleFileUpload} />
 
